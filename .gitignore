@@ -20,3 +20,6 @@
 *.swp
 *.swo
 *~
+
+./client/angular-app/bower_components
+./client/node_modules
