@@ -37,17 +37,17 @@ app.get('/ping', function(req, res, next) {
 switch (environment) {
     default:
         console.log('** DEV **');
-        app.use(express.static('./app/'));
-        // All the assets are served at this point.
-        // // Any invalid calls for templateUrls are under app/* and should return 404
-        // app.use('/app/*', function(req, res, next) {
-        //     four0four.send404(req, res);
-        // });
-        // Any deep link calls should return index.html
-        //app.use('/*', express.static('./app/index.html'));
+        app.use(express.static('./angular-app/'));
+        //All the assets are served at this point.
+        // Any invalid calls for templateUrls are under angular-app/* and should return 404
+        app.use('/angular-app/*', function(req, res, next) {
+            four0four.send404(req, res);
+        });
+        //Any deep link calls should return index.html
+        app.use('/*', express.static('./angular-app/index.html'));
         break;
 }
-// app.get('/api/*', function(req,res){
+// app.get('../../app/*', function(req,res){
 //   console.log(req.url);
 //   var url = "http://127.0.0.1:9000/" + req.url.split("/api/")[1];
 //   req.pipe(request(url)).pipe(res);
@@ -69,10 +69,10 @@ switch (environment) {
 //   console.log(req.url);
 //   var url = "http://52.21.126.151:9004/" + req.url.split("/playback-api/")[1];
 //   req.pipe(request(url)).pipe(res);
-});
+//});
 
 app.use('/*', function (req, res) {
-    res.sendFile(__dirname + '/app/index.html');
+    res.sendFile(__dirname + '/angular-app/index.html');
 });
 
 var server = http.createServer(app);

@@ -4,16 +4,16 @@ var gulp = require( 'gulp' ),
 
 // paths to directories and files used throughout grunt file
 var paths = {
-  index: ['app/index.html'],
-  generated: ["app/app.css", 'jshint-output.log'],
-  libs: ['app/bower_components/**/*.js', 'app/bower_components/**/**/**/**/*.js', 'app/bower_components/**/*.css', '!app/bower_components/**/*theme.css', 
-  '!app/bower_components/**/src/**/*.css', '!app/bower_components/**/*.min.css'],
-  js: ['app/components/**/*.js', 'app/components/**/**/*.js', 'app/modules/**/*.js', 'app/modules/**/**/*.js'],
-  styles: ['app/resources/**/*.less', 'app/components/**/*.less', 'app/components/**/**/*.less', 'app/modules/**/*.less', 'app/modules/**/**/*.less'],
+  index: ['angular-app/index.html'],
+  generated: ["angular-app/angular-app.css", 'jshint-output.log'],
+  libs: ['angular-app/bower_components/**/*.js', 'angular-app/bower_components/**/**/**/**/*.js', 'angular-app/bower_components/**/*.css', '!angular-app/bower_components/**/*theme.css', 
+  '!angular-app/bower_components/**/src/**/*.css', '!angular-app/bower_components/**/*.min.css'],
+  js: ['angular-app/components/**/*.js', 'angular-app/components/**/**/*.js', 'angular-app/modules/**/*.js', 'angular-app/modules/**/**/*.js'],
+  styles: ['angular-app/resources/**/*.less', 'angular-app/components/**/*.less', 'angular-app/components/**/**/*.less', 'angular-app/modules/**/*.less', 'angular-app/modules/**/**/*.less'],
   specs: ['./test/e2e/*spec.js'],
   testConfig: 'test/e2e/conf.js',
-  concatStyles: 'app.css',
-  baseDir: 'app/'
+  concatStyles: 'angular-app.css',
+  baseDir: 'angular-app/'
 };
 
 // Error handler called from gulp-plumber
