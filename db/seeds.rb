@@ -6,4 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-10.times { Product.create(name: Faker::StarWars.specie, price: rand(9999), description: Faker::Hipster.sentence) }
+
+10.times { Client.create(name: Faker::Company.name) }
+
+Client.last(10).each do |client|
+  3.times { Product.create(name: Faker::Pokemon.name + ' ' + Faker::StarWars.specie, price: rand(9999), description: Faker::Hipster.sentence, client_id: client.id) }
+end

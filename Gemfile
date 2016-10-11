@@ -34,11 +34,13 @@ gem 'jbuilder', '~> 2.5'
 # for authentication
 gem 'devise'
 
+# for generate random seed data
+gem 'faker'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
-  gem 'faker'
 end
 
 group :development do
