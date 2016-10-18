@@ -1,5 +1,5 @@
-(function () {
-  'use strict';
+;(function () {
+  'use strict'
 
   // Handles all the logic for navigation within the app
   // Declare app level module which depends on views, and components
@@ -7,24 +7,23 @@
 
     .config(['$stateProvider', '$urlRouterProvider', '$resourceProvider', '$locationProvider', '$httpProvider',
       function ($stateProvider, $urlRouterProvider, $resourceProvider, $locationProvider, $httpProvider) {
-
         $stateProvider.decorator('parent', function (internalStateObj, parentFn) {
           // This fn is called by StateBuilder each time a state is registered
 
           // The first arg is the internal state. Capture it and add an accessor to public state object.
           internalStateObj.self.$$state = function () {
-            return internalStateObj;
-          };
+            return internalStateObj
+          }
 
           // pass through to default .parent() function
-          return parentFn(internalStateObj);
-        });
+          return parentFn(internalStateObj)
+        })
 
         // Don't strip trailing slashes from calculated URLs
-        $resourceProvider.defaults.stripTrailingSlashes = false;
+        $resourceProvider.defaults.stripTrailingSlashes = false
 
-        $urlRouterProvider.otherwise('/login');
-        $locationProvider.html5Mode(true);
+        $urlRouterProvider.otherwise('/login')
+        $locationProvider.html5Mode(true)
 
         $stateProvider
           .state('login', {
@@ -33,8 +32,8 @@
             controller: 'LoginCtrl',
             controllerAs: 'loginCtrl',
             title: 'Login'
-          });
-          
+          })
+
         $stateProvider
           .state('products', {
             url: '/products',
@@ -42,11 +41,19 @@
             controller: 'productsController',
             controllerAs: 'product',
             title: 'Products'
-          });
+          })
 
-       
+        $stateProvider
+          .state('manufacturer', {
+            url: '/manufacturer',
+            templateUrl: 'modules/manufacturer/manufacturer.html',
+            controller: 'manufacturerController',
+            controllerAs: 'manufacturer',
+            title: 'manufacturer'
+          })
 
-        $httpProvider.interceptors.push('ErrorInterceptor');
+
+        $httpProvider.interceptors.push('ErrorInterceptor')
       }
-    ]);
-})();
+    ])
+})()
