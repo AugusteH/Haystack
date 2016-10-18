@@ -52,6 +52,14 @@
             title: 'manufacturer'
           })
 
+        $stateProvider
+          .state('retailer', {
+            url: '/retailer',
+            templateUrl: 'modules/retailer/retailer.html',
+            controller: 'retailerController',
+            controllerAs: 'retailer',
+            title: 'retailer'
+          })
 
         $httpProvider.interceptors.push('ErrorInterceptor')
       }
