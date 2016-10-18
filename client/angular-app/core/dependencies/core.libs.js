@@ -9,7 +9,8 @@
     'ngResource',
     'ngAnimate',
     'ngWebSocket',
-    'ngTagsInput'
+    'ngTagsInput',
+    'ngMaterial'
   ]);
 
 }());
