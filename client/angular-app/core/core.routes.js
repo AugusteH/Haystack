@@ -34,6 +34,15 @@
             controllerAs: 'loginCtrl',
             title: 'Login'
           });
+          
+        $stateProvider
+          .state('products', {
+            url: '/products',
+            templateUrl: 'modules/products/products.html',
+            controller: 'productsController',
+            controllerAs: 'product',
+            title: 'Products'
+          });
 
        
 

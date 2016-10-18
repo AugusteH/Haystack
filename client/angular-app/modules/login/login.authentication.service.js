@@ -8,8 +8,8 @@
     ])
     .factory('AuthenticationService', AuthenticationService);
 
-//add endpoints for haystack as they come 
-  AuthenticationService.$inject = ['$base64', '$http', '$cookies', '$rootScope', 'endpoints'];
+//add endpoints for haystack as they come: 'endpoints'
+  AuthenticationService.$inject = ['$base64', '$http', '$cookies', '$rootScope'];
 
   function AuthenticationService($base64, $http, $cookies, $rootScope, endpoints) {
     var service = {};
