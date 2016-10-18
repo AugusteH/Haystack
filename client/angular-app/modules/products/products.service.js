@@ -3,7 +3,7 @@
  
   angular.module('products.service', [ ])
 
-  .controller('productFactory', ['$http', '$scope', function($http, $scope){
+  .factory('productFactory', ['$http', '$scope', function($http, $scope){
 
 
 
