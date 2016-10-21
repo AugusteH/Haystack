@@ -6,6 +6,7 @@
     'hs.retailer',
     'hs.manufacturer',
     'hs.login',
-    'hs.products'
+    'hs.products',
+    'hs.common'
   ])
 })()

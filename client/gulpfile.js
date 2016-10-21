@@ -3,7 +3,7 @@ var gulp = require( 'gulp' ),
 	plugins = require('gulp-load-plugins')();
 
 // paths to directories and files used throughout grunt file
-var paths = {
+var config = {
   index: ['angular-app/index.html'],
   generated: ["angular-app/angular-app.css", 'jshint-output.log'],
   libs: ['angular-app/bower_components/**/*.js', 'angular-app/bower_components/**/**/**/**/*.js', 'angular-app/bower_components/**/*.css', '!angular-app/bower_components/**/*theme.css', 
@@ -28,12 +28,12 @@ var onError = function (error) {
 // Run manually with: 'gulp test:e2e'
 gulp.task('test:e2e', function(callback) {
     gulp
-        .src(paths.specs)
+        .src(config.specs)
         .pipe(plugins.plumber({
           errorHandler: onError
         }))
         .pipe(plugins.angularProtractor({
-            'configFile': paths.testConfig,
+            'configFile': config.testConfig,
             'debug': false,
             'autoStartStopServer': true
         }))
@@ -55,7 +55,7 @@ gulp.task('test:unit', function (done) {
 // Removes files and folders
 // Run manually with: 'gulp clean' 
 gulp.task('clean', function () {
-  return gulp.src(paths.generated, {read: false})
+  return gulp.src(config.generated, {read: false})
     .pipe(plugins.plumber({
           errorHandler: onError
     }))
@@ -64,7 +64,7 @@ gulp.task('clean', function () {
 
 // Less to CSS: Run manually with: "gulp less"
 gulp.task('less', function () {
-  return gulp.src(paths.styles)
+  return gulp.src(config.styles)
     .pipe(plugins.plumber({
           errorHandler: onError
     }))
@@ -84,15 +84,15 @@ gulp.task('less', function () {
       ],
       cascade: false
     }))
-    .pipe(plugins.concat(paths.concatStyles))
-    .pipe(gulp.dest(paths.baseDir));
+    .pipe(plugins.concat(config.concatStyles))
+    .pipe(gulp.dest(config.baseDir));
 });
  
 
 // run to detect basic javascript syntax  errors
 // Run manually with: 'gulp lint'
 gulp.task('lint', function() {
-  return gulp.src(paths.js)
+  return gulp.src(config.js)
     .pipe(plugins.plumber({
           errorHandler: onError
     }))
@@ -106,7 +106,7 @@ gulp.task('lint', function() {
 // Run manually with: 'gulp wiredep'
 gulp.task('wiredep', function() {
     var wiredep = require('wiredep').stream;
-    var target = gulp.src(paths.index);
+    var target = gulp.src(config.index);
 
     return target
         .pipe(plugins.plumber({
@@ -115,7 +115,7 @@ gulp.task('wiredep', function() {
         .pipe(wiredep({
           dependencies: true
         }))
-        .pipe(gulp.dest(paths.baseDir))
+        .pipe(gulp.dest(config.baseDir))
 
 });
 
