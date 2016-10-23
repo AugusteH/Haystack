@@ -3,7 +3,7 @@
 
     angular.module('products.controller',[ ])
 
-    'productFactory'
+   
     .controller('productsController', ['$http', '$scope', 'endpoints', function($http, $scope, enpoints){
 
         console.log('Products Controller locked and loaded');
