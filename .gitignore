@@ -21,5 +21,9 @@
 *.swo
 *~
 
+public/
 client/angular-app/bower_components
-./client/node_modules
+client/node_modules
+client/.gitignore 
+client/README.md
+client/jshint-output.log
