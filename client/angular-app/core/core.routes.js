@@ -20,8 +20,12 @@
         })
 
         // Don't strip trailing slashes from calculated URLs
-        $resourceProvider.defaults.stripTrailingSlashes = false
+        $resourceProvider.defaults.stripTrailingSlashes = false;
 
+        console.log('hi');
+        $urlRouterProvider.when('/?goto=manufacturer', '/manufacturer');
+        $urlRouterProvider.when('/?goto=retailer', '/retailer');
+        $urlRouterProvider.when('/?goto=products', '/products');
         $urlRouterProvider.otherwise('/login')
         $locationProvider.html5Mode(true)
 

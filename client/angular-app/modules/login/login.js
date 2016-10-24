@@ -17,7 +17,7 @@
 
         /*
          Reset login status, if cookies are not detected
-         Otherwise, if there are cookies, forward the user to Monitor view
+         Otherwise, if there are cookies, forward the user to Products view
          */
         (function () {
           if (AuthenticationService.hasCredentials()) {
