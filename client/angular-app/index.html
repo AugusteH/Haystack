@@ -68,6 +68,7 @@
   <script src="bower_components/angular-aria/angular-aria.js"></script>
   <script src="bower_components/angular-messages/angular-messages.js"></script>
   <script src="bower_components/angular-material/angular-material.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
   <!-- endbower -->
 
 
@@ -139,11 +140,17 @@
 </head>
 <body layout="row" ng-cloak>
 <md-sidenav layout="column" class="sidenav1 md-sidenav" md-is-locked-open='true'>
-   SideNav
+   <ul>
+     <li><a ng-href="/products">Products</a></li>
+     <li><a ng-href="/manufacturer">Manufacturer</a></li>
+     <li><a ng-href="/retailer">Retailer</a></li>
+   </ul>
 </md-sidenav>
      <md-content flex layout="column">
         <ng-view>
-          <div ui-view></div>
+          <div ui-view>
+            <h1>content area</h1>
+          </div>
         </ng-view>
       </md-content>
 </body>

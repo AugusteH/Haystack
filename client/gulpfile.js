@@ -5,7 +5,7 @@ var gulp = require( 'gulp' ),
 // paths to directories and files used throughout grunt file
 var config = {
   index: ['angular-app/index.html'],
-  generated: ["angular-app/angular-app.css", 'jshint-output.log'],
+  generated: ["angular-app/angular-app.css", 'jshint-output.log', './dist/**/*.*'],
   libs: ['angular-app/bower_components/**/*.js', 'angular-app/bower_components/**/**/**/**/*.js', 'angular-app/bower_components/**/*.css', '!angular-app/bower_components/**/*theme.css', 
   '!angular-app/bower_components/**/src/**/*.css', '!angular-app/bower_components/**/*.min.css'],
   js: ['angular-app/components/**/*.js', 'angular-app/components/**/**/*.js', 'angular-app/modules/**/*.js', 'angular-app/modules/**/**/*.js'],
@@ -13,7 +13,9 @@ var config = {
   specs: ['./test/e2e/*spec.js'],
   testConfig: 'test/e2e/conf.js',
   concatStyles: 'angular-app.css',
-  baseDir: 'angular-app/'
+  baseDir: 'angular-app/',
+  prod: ['./**/*.*', '!test/']
+  // '!README.md', '!jshint-output.log', '!.jshintrc', '!.gitignore', '!test/'
 };
 
 // Error handler called from gulp-plumber
@@ -119,6 +121,10 @@ gulp.task('wiredep', function() {
 
 });
 
+gulp.task('build.prod', function(){
+  return gulp.src(config.prod)
+          .pipe(gulp.dest('dist/'));
+});
 
 // run the wiredep, lint, less, and clean tasks
 // Run manually with: 'run-dev'

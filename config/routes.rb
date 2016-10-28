@@ -3,5 +3,17 @@ Rails.application.routes.draw do
   devise_for :users
   resources :products
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
+  # match "/*path" => redirect("/?goto=%{path}")
+
+  class XHRConstraint
+    def matches?(request)
+      !request.xhr? && !(request.url =~ /\.json$/ && ::Rails.env == 'development')
+    end
+  end
+
+   match "/*path" => redirect("/?goto=%{path}"), :via => [:get, :post, :put, :delete], :constraints => XHRConstraint.new
+
   root 'products#index'
+
 end

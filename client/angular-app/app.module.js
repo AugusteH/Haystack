@@ -5,7 +5,8 @@
   angular.module('app', [
   	'hs.libs',
   	'hs.modules',
-    // 'dd.components',
-    // 'dd.features'
+    // 'hs.components',
+    // 'hs.features'
   ]);
+  
 }());
