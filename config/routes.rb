@@ -13,8 +13,8 @@ Rails.application.routes.draw do
     end
   end
 
-   match "/*path" => redirect("/%{path}"), :via => [:get, :post, :put, :delete], :constraints => XHRConstraint.new
+   match "/*path" => redirect("/?goto=%{path}"), :via => [:get, :post, :put, :delete], :constraints => XHRConstraint.new
 
-  root 'products#index'
+
 
 end
