@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   # match "/*path" => redirect("/?goto=%{path}")
 
   class XHRConstraint
+  # change ::Rails.env != 'test' for different environemnts below i.e production, development etc.. 
     def matches?(request)
-      !request.xhr? && !(request.url =~ /\.json$/ && ::Rails.env == 'development')
+      !request.xhr? && !(request.url =~ /\.json$/ && ::Rails.env != 'test')
     end
   end
 
