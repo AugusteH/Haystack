@@ -5,11 +5,14 @@ class ClientsController < ApplicationController
   # GET /clients.json
   def index
     @clients = Client.all
+
+    render json: @clients
   end
 
   # GET /clients/1
   # GET /clients/1.json
   def show
+    render json: @client
   end
 
   # POST /clients
