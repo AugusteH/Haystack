@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'user/create'
+
+  get 'user/update'
+
+  get 'user/destroy'
+
   resources :clients
   devise_for :users
   resources :products
