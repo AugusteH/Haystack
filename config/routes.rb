@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  post 'users/create'
+  put 'users/update'
+  delete 'users/destroy'
+
   resources :clients
   devise_for :users
   resources :products
