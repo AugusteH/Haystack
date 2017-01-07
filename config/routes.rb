@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'user/create'
+  get 'users/create'
 
-  get 'user/update'
+  get 'users/update'
 
-  get 'user/destroy'
+  get 'users/destroy'
 
   resources :clients
   devise_for :users
