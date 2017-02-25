@@ -35,7 +35,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # for authentication
-gem 'devise'
 gem 'devise_token_auth'
 
 # for generate random seed data
