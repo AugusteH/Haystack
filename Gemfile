@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 
 # for authentication
 gem 'devise_token_auth'
+gem 'omniauth'
 
 # for generate random seed data
 gem 'faker'
