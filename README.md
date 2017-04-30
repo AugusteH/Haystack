@@ -2,9 +2,9 @@
 
 
 ##### TO START SERVER
-```bundle exec db:create```
+```bundle exec rake db:creat```
 
-```bundle exec db:migrate```
+```bundle exec rake db:migrate```
 
 ```bundle exec rails server```
 
