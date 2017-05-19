@@ -15,7 +15,4 @@
 ##### TO SEED DB
 ```rake db:seed```
 
-##### TO START UI
-```cd client/```
 
-```npm start```
