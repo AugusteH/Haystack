@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170225214927) do
+ActiveRecord::Schema.define(version: 20170628002301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,8 +30,22 @@ ActiveRecord::Schema.define(version: 20170225214927) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.boolean  "retailer"
+    t.boolean  "manufacturer"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "companyName"
+    t.string   "companyDetails"
+    t.json     "locations"
+    t.text     "description"
+    t.json     "phone_numbers"
+    t.json     "emails"
+    t.text     "limitations"
+    t.text     "channels"
+    t.text     "pricing"
+    t.integer  "user_id",        null: false
   end
 
   create_table "orders", force: :cascade do |t|
@@ -48,12 +62,22 @@ ActiveRecord::Schema.define(version: 20170225214927) do
     t.string   "name"
     t.string   "description"
     t.integer  "client_id"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
     t.string   "category"
     t.integer  "price_cents"
     t.integer  "quantity"
-    t.boolean  "active",      default: false
+    t.boolean  "active",                      default: false
+    t.string   "subcategory"
+    t.text     "distribution"
+    t.text     "unique_selling_propositions"
+    t.text     "distribution_limitations"
+    t.text     "distribution_channels"
+    t.boolean  "drop_ship_capability"
+    t.json     "approvals_certifications"
+    t.string   "private_label_capability"
+    t.text     "target_audience"
+    t.string   "company_name"
   end
 
   create_table "users", force: :cascade do |t|
