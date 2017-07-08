@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170628002301) do
+ActiveRecord::Schema.define(version: 20170708031150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20170628002301) do
     t.string   "private_label_capability"
     t.text     "target_audience"
     t.string   "company_name"
+    t.string   "image"
   end
 
   create_table "users", force: :cascade do |t|
