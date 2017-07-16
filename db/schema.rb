@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170628002301) do
+ActiveRecord::Schema.define(version: 20170716172407) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,12 +62,12 @@ ActiveRecord::Schema.define(version: 20170628002301) do
     t.string   "name"
     t.string   "description"
     t.integer  "client_id"
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
+    t.datetime "created_at",                                                          null: false
+    t.datetime "updated_at",                                                          null: false
     t.string   "category"
     t.integer  "price_cents"
     t.integer  "quantity"
-    t.boolean  "active",                      default: false
+    t.boolean  "active",                                              default: false
     t.string   "subcategory"
     t.text     "distribution"
     t.text     "unique_selling_propositions"
@@ -78,6 +78,18 @@ ActiveRecord::Schema.define(version: 20170628002301) do
     t.string   "private_label_capability"
     t.text     "target_audience"
     t.string   "company_name"
+    t.string   "image"
+    t.string   "sku"
+    t.string   "barcode"
+    t.string   "width"
+    t.string   "height"
+    t.string   "depth"
+    t.string   "weight"
+    t.string   "extra_shipping_fee"
+    t.decimal  "price_tax_excluded",          precision: 5, scale: 2
+    t.decimal  "price_tax_included",          precision: 5, scale: 2
+    t.decimal  "tax_rate",                    precision: 5, scale: 2
+    t.integer  "compared_price"
   end
 
   create_table "users", force: :cascade do |t|
